@@ -8,17 +8,18 @@ public class CuentaBancaria {
     }
 
     public void depositar(double monto) {
-        this.saldo += monto;
-    }
-
-    public double obtenerSaldo() {
-        return this.saldo;
+        if (monto > 0) {
+            this.saldo += monto;
+        }
     }
 
     public void retirar(double monto) {
-        if (monto <= saldo) {
-            saldo -= monto;
+        if (monto > 0 && monto <= saldo) {
+            this.saldo -= monto;
         }
     }
-}
 
+    public double obtenerSaldo() {
+        return saldo;
+    }
+}
