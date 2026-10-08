@@ -22,4 +22,10 @@ public class CuentaBancaria {
     public double obtenerSaldo() {
         return saldo;
     }
+    public void transferir(CuentaBancaria destino, double monto) {
+        if (monto > 0 && monto <= saldo) {
+            this.retirar(monto);
+            destino.depositar(monto);
+        }
+    }
 }
